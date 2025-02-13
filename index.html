@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>💖 Cœur 3D de Saint-Valentin 💖</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #ffdde1;
+            margin: 0;
+            perspective: 600px;
+        }
+
+        .heart-container {
+            position: relative;
+            width: 100px;
+            height: 100px;
+            transform-style: preserve-3d;
+            animation: rotate 4s infinite linear;
+        }
+
+        .heart {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            transform: rotate(-45deg);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .heart::before,
+        .heart::after {
+            content: "";
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            border-radius: 50%;
+        }
+
+        .heart::before {
+            top: -50px;
+            left: 0;
+        }
+
+        .heart::after {
+            left: 50px;
+            top: 0;
+            z-index:10;
+        }
+
+      
+
+        .message {
+            position: absolute;
+            top: 50%;
+            left: 55%;
+            transform: translate(-50%, -50%) translateZ(20px);
+            font-family: Arial, sans-serif;
+            font-size: 20px;
+            color: white;
+            opacity: 0;
+            transition: opacity 0.5s;
+            z-index : 11;
+        }
+
+        .heart-container:hover .message {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="heart-container">
+        <div class="heart">
+            <div class="message">Bonne saint valentinnnn ❤️ </div>
+        </div>
+    </div>
+</body>
+</html>
